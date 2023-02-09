@@ -1,0 +1,29 @@
+<a href="<?php echo $this->url('policy/default', array('controller' => 'policy', 'action' => 'create')); ?>">Create</a>
+<table class="table">
+<tr>
+	<th>Policy ID</th>
+	<th>First Name</th>
+	<th>Last Name</th>
+        <th>Policy Number</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Premium</th>
+</tr>
+<?php
+	foreach ($arrPolicies as $policy) {
+?>
+		<tr>
+			<td><?php  echo $policy['id'];?></td>
+			<td><?php  echo $policy['first_name']; ?></td>
+			<td><?php  echo $policy['last_name']; ?></td>
+                        <td><?php  echo $policy['policy_number']; ?></td>
+                        <td><?php  echo $policy['start_date']; ?></td>
+                        <td><?php  echo $policy['end_date']; ?></td>
+                        <td><?php  echo $policy['premium']; ?></td>
+			<td><a href="<?php echo $this->url('policy/default', array('controller' => 'policy', 'action' => 'update', 'id' => $policy['id'])); ?>">Edit</a></td>
+			<td><a href="<?php echo $this->url('policy/default', array('controller' => 'policy', 'action' => 'delete', 'id' => $policy['id']));?>" onclick="return confirm('Do you rely want to delete the record?')">Delete</a></td>
+		</tr>
+<?php
+	}
+?>
+</table>

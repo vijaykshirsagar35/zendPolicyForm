@@ -1,0 +1,9 @@
+<h1>Update</h1>
+<?php
+$form = $this->form;
+$form->prepare();
+$form->setAttribute('action', $this->url('policy/default', array('controller' => 'policy', 'action' => 'update', 'id' => $id)));
+$form->setAttribute('method', 'post');
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();

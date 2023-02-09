@@ -1,0 +1,9 @@
+<?php
+echo '<h1>Create</h1>';
+$form = $this->form;
+$form->prepare();
+$form->setAttribute('action', $this->url('policy/default', array('controller' => 'policy', 'action' => 'create')));
+$form->setAttribute('method', 'post');
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
